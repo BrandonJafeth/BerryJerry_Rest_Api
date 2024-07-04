@@ -8,6 +8,7 @@ import { FooterInfoModule } from './footer-info/footer-info.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Hero } from './hero/entities/hero.entity';
 import { Gallery } from './gallery/entities/gallery.entity';
+import { FooterInfo } from './footer-info/entities/footer-info.entity';
 
 
 @Module({
@@ -19,7 +20,7 @@ import { Gallery } from './gallery/entities/gallery.entity';
       username: 'root',
       password: 'Obando19',
       database: 'company',
-      entities: [Hero,Gallery],
+      entities: [Hero,Gallery,FooterInfo,CustomerReview],
       autoLoadEntities: true,
       synchronize: true,
     })
