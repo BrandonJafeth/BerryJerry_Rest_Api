@@ -6,6 +6,8 @@ import { CustomerReviewsModule } from './customer-reviews/customer-reviews.modul
 import { ServicesModule } from './services/services.module';
 import { FooterInfoModule } from './footer-info/footer-info.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Hero } from './hero/entities/hero.entity';
+import { Gallery } from './gallery/entities/gallery.entity';
 
 
 @Module({
@@ -17,7 +19,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'root',
       password: 'Obando19',
       database: 'company',
-      entities: [],
+      entities: [Hero,Gallery],
       autoLoadEntities: true,
       synchronize: true,
     })
