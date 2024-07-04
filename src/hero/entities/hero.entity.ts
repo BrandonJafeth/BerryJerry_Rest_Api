@@ -1,7 +1,7 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 
-@Entity('Hero')
+@Entity('hero')
 export class Hero {
 
     @PrimaryGeneratedColumn()
@@ -17,5 +17,6 @@ export class Hero {
     @Column()
     imageHero: string;
 
-
+    @Column()
+    iconBerry: string;
 }
