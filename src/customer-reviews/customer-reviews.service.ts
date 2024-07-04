@@ -1,26 +1,32 @@
 import { Injectable } from '@nestjs/common';
 import { CreateCustomerReviewDto } from './dto/create-customer-review.dto';
 import { UpdateCustomerReviewDto } from './dto/update-customer-review.dto';
+import { CustomerReview } from './entities/customer-review.entity';
+import { Repository } from 'typeorm';
+import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class CustomerReviewsService {
+  constructor(
+    @InjectRepository(CustomerReview)
+    private CustomerReviewRepository: Repository <CustomerReview>
+  ){}
+
   create(createCustomerReviewDto: CreateCustomerReviewDto) {
-    return 'This action adds a new customerReview';
+    const addCustomerReview = this.CustomerReviewRepository.create(createCustomerReviewDto);
+    this.CustomerReviewRepository.save(addCustomerReview);
+    return addCustomerReview;
   }
 
   findAll() {
-    return `This action returns all customerReviews`;
+    return this.CustomerReviewRepository.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} customerReview`;
-  }
-
-  update(id: number, updateCustomerReviewDto: UpdateCustomerReviewDto) {
-    return `This action updates a #${id} customerReview`;
+    return this.CustomerReviewRepository.findOneBy({id});
   }
 
   remove(id: number) {
-    return `This action removes a #${id} customerReview`;
+    return this.CustomerReviewRepository.delete({id});
   }
 }
