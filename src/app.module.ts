@@ -18,7 +18,7 @@ import { Gallery } from './gallery/entities/gallery.entity';
       port: 3306,
       username: 'root',
       password: 'Obando19',
-      database: 'company',
+      database: 'berryjerrydb',
       entities: [Hero,Gallery],
       autoLoadEntities: true,
       synchronize: true,
