@@ -9,6 +9,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Hero } from './hero/entities/hero.entity';
 import { Gallery } from './gallery/entities/gallery.entity';
 import { FooterInfo } from './footer-info/entities/footer-info.entity';
+import { CustomerReview } from './customer-reviews/entities/customer-review.entity';
 
 
 @Module({
