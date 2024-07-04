@@ -37,3 +37,6 @@ export class GalleryService {
     return this.GalleryRepository.delete(id);
   }
 }
+
+
+
