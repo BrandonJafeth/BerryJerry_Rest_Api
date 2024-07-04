@@ -1,1 +1,13 @@
-export class FooterInfo {}
+
+
+
+
+export class FooterInfo {
+
+
+
+
+
+
+
+}
