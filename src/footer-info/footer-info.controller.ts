@@ -3,7 +3,7 @@ import { FooterInfoService } from './footer-info.service';
 import { CreateFooterInfoDto } from './dto/create-footer-info.dto';
 import { UpdateFooterInfoDto } from './dto/update-footer-info.dto';
 
-@Controller('footer-info')
+@Controller('footer')
 export class FooterInfoController {
   constructor(private readonly footerInfoService: FooterInfoService) {}
 
@@ -17,18 +17,8 @@ export class FooterInfoController {
     return this.footerInfoService.findAll();
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.footerInfoService.findOne(+id);
-  }
-
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateFooterInfoDto: UpdateFooterInfoDto) {
     return this.footerInfoService.update(+id, updateFooterInfoDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.footerInfoService.remove(+id);
   }
 }

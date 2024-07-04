@@ -3,7 +3,7 @@ import { CustomerReviewsService } from './customer-reviews.service';
 import { CreateCustomerReviewDto } from './dto/create-customer-review.dto';
 import { UpdateCustomerReviewDto } from './dto/update-customer-review.dto';
 
-@Controller('customer-reviews')
+@Controller('reviews')
 export class CustomerReviewsController {
   constructor(private readonly customerReviewsService: CustomerReviewsService) {}
 
@@ -20,11 +20,6 @@ export class CustomerReviewsController {
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.customerReviewsService.findOne(+id);
-  }
-
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateCustomerReviewDto: UpdateCustomerReviewDto) {
-    return this.customerReviewsService.update(+id, updateCustomerReviewDto);
   }
 
   @Delete(':id')

@@ -1,1 +1,7 @@
-export class CreateFooterInfoDto {}
+export class CreateFooterInfoDto {
+    descriptionFooter: string;
+
+    phoneFooter: string;
+
+    emailFooter: string;
+}

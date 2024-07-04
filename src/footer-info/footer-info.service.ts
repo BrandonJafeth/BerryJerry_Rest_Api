@@ -1,26 +1,33 @@
 import { Injectable } from '@nestjs/common';
 import { CreateFooterInfoDto } from './dto/create-footer-info.dto';
 import { UpdateFooterInfoDto } from './dto/update-footer-info.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { FooterInfo } from './entities/footer-info.entity';
+import { Repository } from 'typeorm';
+
 
 @Injectable()
 export class FooterInfoService {
+  constructor(
+    @InjectRepository(FooterInfo)
+    private FooterRepository: Repository<FooterInfo>
+  ){}
+
+    //Post
   create(createFooterInfoDto: CreateFooterInfoDto) {
-    return 'This action adds a new footerInfo';
+    const addFooterInfo = this.FooterRepository.create(createFooterInfoDto);
+    this.FooterRepository.save(addFooterInfo);
+    return addFooterInfo;
   }
 
+    //Get All
   findAll() {
-    return `This action returns all footerInfo`;
+    return this.FooterRepository.find();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} footerInfo`;
-  }
-
-  update(id: number, updateFooterInfoDto: UpdateFooterInfoDto) {
-    return `This action updates a #${id} footerInfo`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} footerInfo`;
+    //Put
+  async update(id: number, updateFooterInfoDto: UpdateFooterInfoDto) {
+    const UpdateFooterInfo = await this.FooterRepository.update({id}, updateFooterInfoDto);
+    return UpdateFooterInfo;
   }
 }
