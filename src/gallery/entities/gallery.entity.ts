@@ -1,5 +1,4 @@
-import { Entity, PrimaryGeneratedColumn } from "typeorm";
-
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('gallery')
 export class Gallery {
@@ -7,4 +6,7 @@ export class Gallery {
 
     @PrimaryGeneratedColumn()
     id: number;
+
+    @Column()
+    url: string;
 }
