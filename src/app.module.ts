@@ -10,6 +10,7 @@ import { Hero } from './hero/entities/hero.entity';
 import { Gallery } from './gallery/entities/gallery.entity';
 import { FooterInfo } from './footer-info/entities/footer-info.entity';
 import { CustomerReview } from './customer-reviews/entities/customer-review.entity';
+import { Service } from './services/entities/service.entity';
 
 
 @Module({
@@ -19,11 +20,11 @@ import { CustomerReview } from './customer-reviews/entities/customer-review.enti
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: '12345',
+      password: 'Obando19',
       database: 'berryjerrydb',
-      entities: [Hero,Gallery,FooterInfo,CustomerReview],
+      entities: [Hero,Gallery,FooterInfo,CustomerReview,Service],
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: false,
     })
 ],
 
