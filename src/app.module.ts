@@ -11,6 +11,7 @@ import { Gallery } from './gallery/entities/gallery.entity';
 import { FooterInfo } from './footer-info/entities/footer-info.entity';
 import { CustomerReview } from './customer-reviews/entities/customer-review.entity';
 import { Service } from './services/entities/service.entity';
+import { BerryJerryModule } from './berry-jerry/berry-jerry.module';
 
 
 @Module({
@@ -21,11 +22,12 @@ import { Service } from './services/entities/service.entity';
       port: 3306,
       username: 'root',
       password: 'Obando19',
-      database: 'berryjerrydb',
+      database: 'berryjerrybd',
       entities: [Hero,Gallery,FooterInfo,CustomerReview,Service],
       autoLoadEntities: true,
       synchronize: false,
-    })
+    }),
+    BerryJerryModule
 ],
 
 })

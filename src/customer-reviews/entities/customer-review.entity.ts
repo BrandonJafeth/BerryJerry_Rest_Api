@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BerryJerry } from "src/berry-jerry/entities/berry-jerry.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('CustomerReview')
 export class CustomerReview {
@@ -14,4 +15,8 @@ export class CustomerReview {
     @Column()
     customerDescription: string;
 
+    @ManyToOne(() => BerryJerry, berryjerry => berryjerry.customerreview)
+    berryjerry: BerryJerry;
 }
+
+

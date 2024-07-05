@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BerryJerry } from "src/berry-jerry/entities/berry-jerry.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 
 @Entity('hero')
@@ -17,6 +18,7 @@ export class Hero {
     @Column()
     imageHero: string;
 
-    @Column()
-    iconBerry: string;
+    @ManyToOne(() => BerryJerry, berryjerry => berryjerry.hero)
+    berryjerry: BerryJerry;
+
 }

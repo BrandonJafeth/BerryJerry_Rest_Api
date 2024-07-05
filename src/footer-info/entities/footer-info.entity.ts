@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BerryJerry } from "src/berry-jerry/entities/berry-jerry.entity";
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('FooterInfo')
 export class FooterInfo {
@@ -13,4 +14,8 @@ export class FooterInfo {
 
     @Column()
     emailFooter: string;
+
+    @ManyToOne(() => BerryJerry, berryjerry => berryjerry.footerinfo)
+    berryjerry: BerryJerry;
 }
+
