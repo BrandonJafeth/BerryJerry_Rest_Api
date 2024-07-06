@@ -19,4 +19,7 @@ export class Hero {
 
     @Column()
     iconBerry: string;
+
+    @Column()
+    heropng: string;
 }

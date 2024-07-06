@@ -4,4 +4,5 @@ export class CreateHeroDto {
     descriptionHero: string;
     imageHero: string;
     iconBerry: string;
+    heropng: string;
 }
