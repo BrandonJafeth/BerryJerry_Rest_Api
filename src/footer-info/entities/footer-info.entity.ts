@@ -13,4 +13,8 @@ export class FooterInfo {
 
     @Column()
     emailFooter: string;
+
+    @Column()
+    iconFooter: string;
 }
+

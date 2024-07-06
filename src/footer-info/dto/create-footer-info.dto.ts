@@ -4,4 +4,6 @@ export class CreateFooterInfoDto {
     phoneFooter: string;
 
     emailFooter: string;
+
+    iconFooter: string;
 }

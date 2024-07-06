@@ -24,7 +24,7 @@ import { Service } from './services/entities/service.entity';
       database: 'berryjerrydb',
       entities: [Hero,Gallery,FooterInfo,CustomerReview,Service],
       autoLoadEntities: true,
-      synchronize: false,
+      synchronize: true,
     })
 ],
 
