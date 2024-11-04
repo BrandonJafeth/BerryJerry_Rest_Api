@@ -1,5 +1,6 @@
 
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { HeroModule } from './hero/hero.module';
 import { GalleryModule } from './gallery/gallery.module';
 import { CustomerReviewsModule } from './customer-reviews/customer-reviews.module';
@@ -14,19 +15,26 @@ import { Service } from './services/entities/service.entity';
 
 
 @Module({
-  imports: [ HeroModule, GalleryModule, CustomerReviewsModule, ServicesModule, FooterInfoModule,
+  imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+    HeroModule,
+    GalleryModule,
+    CustomerReviewsModule,
+    ServicesModule,
+    FooterInfoModule,
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: 'Obando19',
-      database: 'berryjerrydb',
-      entities: [Hero,Gallery,FooterInfo,CustomerReview,Service],
+      host: process.env.DB_HOST,
+      port: parseInt(process.env.DB_PORT, 10),
+      username: process.env.DB_USERNAME,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DB_DATABASE,
+      entities: [Hero, Gallery, FooterInfo, CustomerReview, Service],
       autoLoadEntities: true,
-      synchronize: false,
-    })
-],
-
+      synchronize: true,
+    }),
+  ],
 })
 export class AppModule {}
