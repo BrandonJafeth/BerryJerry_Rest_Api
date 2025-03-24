@@ -10,7 +10,7 @@ export class Hero {
     @Column()
     titleHero: string;
 
-    @Column()
+    @Column({ length: 500 })
     descriptionHero: string;
 
 

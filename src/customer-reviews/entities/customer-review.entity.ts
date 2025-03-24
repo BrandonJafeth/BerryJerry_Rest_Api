@@ -11,7 +11,7 @@ export class CustomerReview {
     @Column()
     customerImage: string;
 
-    @Column()
+    @Column({ length: 1000 })
     customerDescription: string;
 
 }

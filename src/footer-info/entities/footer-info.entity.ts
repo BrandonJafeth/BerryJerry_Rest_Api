@@ -5,7 +5,7 @@ export class FooterInfo {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Column({ length: 500 })
     descriptionFooter: string;
 
     @Column()

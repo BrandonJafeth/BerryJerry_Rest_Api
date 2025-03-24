@@ -11,7 +11,7 @@ export class Service {
     @Column()
     titleService: string;
 
-    @Column()
+    @Column({ length: 500 })
     descriptionService: string;
 
 

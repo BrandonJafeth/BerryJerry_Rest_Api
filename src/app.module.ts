@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { HeroModule } from './hero/hero.module';
 import { GalleryModule } from './gallery/gallery.module';
 import { CustomerReviewsModule } from './customer-reviews/customer-reviews.module';
