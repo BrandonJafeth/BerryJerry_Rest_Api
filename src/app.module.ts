@@ -1,12 +1,11 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { HeroModule } from './hero/hero.module';
 import { GalleryModule } from './gallery/gallery.module';
 import { CustomerReviewsModule } from './customer-reviews/customer-reviews.module';
 import { ServicesModule } from './services/services.module';
 import { FooterInfoModule } from './footer-info/footer-info.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ConfigModule, ConfigService } from '@nestjs/config';
 import { Hero } from './hero/entities/hero.entity';
 import { Gallery } from './gallery/entities/gallery.entity';
 import { FooterInfo } from './footer-info/entities/footer-info.entity';
